@@ -1,0 +1,30 @@
+<!-- Make sure you have Node.js and npm installed.
+Create your project folder and run:
+bash
+Copy
+Edit
+npm init -y
+npm install bootstrap@5
+Your node_modules folder will now have Bootstrap files. 
+Create a simple index.html inside your project folder, and link Bootstrap's CSS and JS from node_modules like this -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Bootstrap 5 Local Setup</title>
+  <!-- Bootstrap CSS from node_modules -->
+  <link href="node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+</head>
+<body>
+
+  <div class="container mt-5">
+    <h1 class="text-danger">Bootstrap 5 from local files</h1>
+    <button class="btn btn-primary">Press Me</button>
+  </div>
+
+  <!-- Bootstrap JS Bundle -->
+  <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

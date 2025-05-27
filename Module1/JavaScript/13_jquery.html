@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Portal Base Template</title>
+</head>
+<body>
+<button id="registerBtn">Register</button>
+
+<div id="eventCard" style="display:none; border: 1px solid #ccc; padding: 10px; margin-top: 10px;">
+  🎉 Event Details Here
+</div>
+</body>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+  $('#registerBtn').click(function() {
+    // Toggle fade in/out on event card
+    if ($('#eventCard').is(':visible')) {
+      $('#eventCard').fadeOut(500);
+    } else {
+      $('#eventCard').fadeIn(500);
+    }
+  });
+</script>

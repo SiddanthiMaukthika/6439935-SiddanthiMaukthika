@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Portal Navigation</title>
+    <style>
+        #welcomeBanner {
+            background-color: #007BFF; /* blue */
+            color: white;
+            padding: 1em;
+            text-align: center;
+            font-size: 1.2em;
+        }
+
+        .highlight {
+            background-color: yellow;
+            padding: 0.2em 0.5em;
+            border-radius: 4px;
+        }
+    .gallery-img {
+        width: 100%;
+        max-width: 150px;
+        border: 3px solid #ccc;
+        border-radius: 6px;
+    }
+
+    table {
+        width: 100%;
+        text-align: center;
+        margin-top: 1em;
+    }
+
+    caption {
+        font-weight: bold;
+        margin-bottom: 0.5em;
+        font-size: 1.1em;
+    }
+
+    td {
+        padding: 10px;
+    }
+</style>
+</head>
+<body>
+    <div id="welcomeBanner">
+        Welcome back, <span class="highlight">User</span>!
+        <span style="color: red; font-weight: bold;">Special offer: 50% off today!</span>
+    </div>
+    <main>
+        <section id="home">
+            <h1 class="highlight">Home</h1>
+            <p>Welcome to our portal homepage!</p>
+        </section>
+        <section id="events">
+            <h1>Events</h1>
+            <p class="highlight">Check out our latest lineup of events!</p>
+        </section>
+        <section id="contact">
+            <h1>Contact</h1>
+            <p>Reach out to us via the form or email.</p>
+        </section>
+        <!-- Events Image Gallery -->
+<section id="gallery">
+    <h2 class="highlight">Community Event Gallery</h2>
+
+    <table>
+        <caption>Snapshots from Past Community Events</caption>
+        <tr>
+            <td>
+                <img src="event1.jpg" alt="Music Night" title="Music Night 2024" class="gallery-img">
+                <p>Music Night</p>
+            </td>
+            <td>
+                <img src="event2.jpg" alt="Charity Walk" title="Annual Charity Walk" class="gallery-img">
+                <p>Charity Walk</p>
+            </td>
+            <td>
+                <img src="event3.jpg" alt="Tech Expo" title="Tech Expo 2024" class="gallery-img">
+                <p>Tech Expo</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <img src="event4.jpg" alt="Food Festival" title="Local Food Festival" class="gallery-img">
+                <p>Food Festival</p>
+            </td>
+            <td>
+                <img src="event5.jpg" alt="Art Fair" title="Art Fair Exhibit" class="gallery-img">
+                <p>Art Fair</p>
+            </td>
+            <td>
+                <img src="event6.jpg" alt="Cultural Parade" title="Cultural Parade Highlights" class="gallery-img">
+                <p>Cultural Parade</p>
+            </td>
+        </tr>
+    </table>
+</section>
+
+    </main>
+
+</body>
+</html>

@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Portal Navigation</title>
+    <style>
+  #feedbackForm {
+    background: #f0f8ff;
+    padding: 15px;
+    margin-top: 10px;
+    border-radius: 10px;
+  }
+
+  #feedbackForm input, select, textarea, button {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  #eventImage {
+    cursor: pointer;
+    transition: width 0.3s ease;
+  }
+
+  .highlight {
+    font-weight: bold;
+    color: #007BFF;
+  }
+
+  output {
+    color: green;
+    margin-top: 10px;
+    display: block;
+  }
+</style>
+</head>
+<body>
+    <main>
+        <section id="feedback">
+            <h2 class="highlight">Event Feedback</h2>
+            
+            <form id="feedbackForm">
+              <label for="phone">Phone Number:</label><br>
+              <input type="text" id="phone" placeholder="e.g. 9876543210" onblur="validatePhone()" required><br><br>
+          
+              <label for="eventSelect">Choose Event:</label><br>
+              <select id="eventSelect" onchange="showFee()">
+                <option value="">--Select--</option>
+                <option value="music">Music Night - ₹100</option>
+                <option value="tech">Tech Expo - ₹150</option>
+                <option value="food">Food Fest - ₹200</option>
+              </select>
+              <small>Your event preference will be saved for your next visit!</small>
+              <p id="feeDisplay" class="highlight"></p>
+          
+              <label for="feedbackMsg">Your Feedback:</label><br>
+              <textarea id="feedbackMsg" rows="4" cols="40" placeholder="Type here..." onkeyup="countCharacters()"></textarea>
+              <p id="charCount">Characters: 0</p>
+          
+              <button type="button" onclick="submitFeedback()">Submit Feedback</button>
+            </form>
+          
+            <output id="feedbackConfirmation"></output>
+          
+            <h3>Click to Enlarge Image:</h3>
+            <img id="eventImage" src="event1.jpg" alt="Sample Event" title="Double-click to enlarge" width="200" ondblclick="enlargeImage()" style="border: 2px solid #444;">
+          </section>
+          <button type="button" onclick="clearPreferences()">Clear Preferences</button>
+    </main>
+
+</body>
+<script>
+    function validatePhone() {
+      const phone = document.getElementById('phone').value;
+      const phonePattern = /^[6-9]\d{9}$/;
+      if (!phonePattern.test(phone)) {
+        alert('❌ Please enter a valid 10-digit Indian phone number starting with 6-9');
+        document.getElementById('phone').focus();
+      }
+    }
+  
+    function showFee() {
+      const event = document.getElementById('eventSelect').value;
+      let feeText = '';
+  
+      switch(event) {
+        case 'music': feeText = "Event Fee: ₹100"; break;
+        case 'tech':  feeText = "Event Fee: ₹150"; break;
+        case 'food':  feeText = "Event Fee: ₹200"; break;
+        default: feeText = '';
+      }
+  
+      document.getElementById('feeDisplay').textContent = feeText;
+    }
+  
+    function countCharacters() {
+      const text = document.getElementById('feedbackMsg').value;
+      document.getElementById('charCount').textContent = `Characters: ${text.length}`;
+    }
+  
+    function submitFeedback() {
+      document.getElementById('feedbackConfirmation').textContent = "✅ Thank you for your feedback!";
+    }
+  
+    function enlargeImage() {
+      const image = document.getElementById('eventImage');
+      if (image.style.width === "400px") {
+        image.style.width = "200px";
+      } else {
+        image.style.width = "400px";
+      }
+    }
+  // Save selected event type in localStorage
+  function savePreference() {
+    const selectedType = document.getElementById("eventType").value;
+    localStorage.setItem("preferredEvent", selectedType);
+    sessionStorage.setItem("tempEvent", selectedType); // Optional for session use
+  }
+
+  // Load and pre-select stored event type
+  window.onload = function () {
+    const storedType = localStorage.getItem("preferredEvent");
+    if (storedType) {
+      document.getElementById("eventType").value = storedType;
+    }
+  };
+
+  // Clear preferences from both localStorage and sessionStorage
+  function clearPreferences() {
+    localStorage.removeItem("preferredEvent");
+    sessionStorage.clear();
+    alert("🧹 Preferences cleared!");
+    location.reload(); // Refresh to reflect the cleared selection
+  }
+  </script>
+  
+  
+</html>

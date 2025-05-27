@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Box Model & Layout Control</title>
+  <link rel="stylesheet" href="8_style.css" />
+</head>
+<body>
+
+  <h1>City Portal Events</h1>
+
+  <!-- Event Cards -->
+  <div class="eventCard">
+    <h2>Farmers Market</h2>
+    <p>June 10, 2025 at Central Park</p>
+  </div>
+
+  <div class="eventCard">
+    <h2>Outdoor Concert</h2>
+    <p>June 12, 2025 at City Square</p>
+  </div>
+
+  <div class="eventCard">
+    <h2>Art Exhibit Opening</h2>
+    <p>June 15, 2025 at Gallery Hall</p>
+  </div>
+
+  <!-- Form Example -->
+  <form>
+    <h2>Register for an Event</h2>
+    
+    <label for="name">Name:</label><br />
+    <input type="text" id="name" name="name" placeholder="Your name" /><br /><br />
+
+    <label for="comments">Comments:</label><br />
+    <textarea id="comments" name="comments" rows="4" placeholder="Your message"></textarea><br /><br />
+
+    <label for="event">Select Event:</label><br />
+    <select id="event" name="event">
+      <option>Farmers Market</option>
+      <option>Outdoor Concert</option>
+      <option>Art Exhibit</option>
+    </select>
+  </form>
+
+  <!-- Visibility vs Display Demo -->
+  <div class="visibility-box" style="visibility: hidden;">I am hidden but still take space (visibility: hidden).</div>
+  <div class="display-box" style="display: none;">I am gone from layout (display: none).</div>
+
+</body>
+</html>

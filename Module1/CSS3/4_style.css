@@ -1,0 +1,37 @@
+/* Branding Base Styles */
+
+/* Body background with image + fallback color */
+body {
+  background-color: #e0f7fa; /* Fallback solid color */
+  background-image: url('image1.avif');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  color: #222; /* Default text color */
+  font-family: 'Arial', sans-serif;
+}
+
+/* Text Colors Using HEX and RGBA */
+
+/* Header titles */
+h1 {
+  color: #004d40; /* HEX for strong branding */
+}
+
+/* Subtext or captions */
+.caption {
+  color: rgba(0, 77, 64, 0.7); /* RGBA for slight transparency */
+}
+
+/* Gradient Headers */
+
+/* Gradient for section headers */
+.section-header {
+  background: linear-gradient(to right, #00796b, #48c9b0);
+  color: white;
+  padding: 20px;
+  text-align: center;
+  border-radius: 8px;
+  font-size: 1.8rem;
+  margin-bottom: 25px;
+}

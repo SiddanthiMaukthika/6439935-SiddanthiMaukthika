@@ -1,0 +1,20 @@
+1. Initialize your project
+mkdir bootstrap-sass-project
+cd bootstrap-sass-project
+npm init -y
+2. Install Bootstrap and Sass
+npm install bootstrap sass
+3. Create your project structure
+mkdir scss css
+touch scss/styles.scss index.html
+4. Import Bootstrap SCSS into your file In scss/styles.scss
+// Custom overrides must come *before* bootstrap
+@import "variables";
+@import "../node_modules/bootstrap/scss/bootstrap";
+5. Compile SCSS to CSS
+Add this script to your package.json:
+"scripts": {
+  "build-css": "sass scss/styles.scss css/styles.css"
+}
+6. Build it
+npm run build-css

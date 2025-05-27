@@ -1,0 +1,57 @@
+/* Reset Styles */
+
+/* Universal selector to remove default spacing */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+/* Element Selectors */
+
+/* Style all <h2> elements */
+h2 {
+  font-size: 2rem;
+  color: #2c3e50;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+
+/* ID Selectors */
+
+/* Style for main header banner */
+#mainHeader {
+  background: linear-gradient(to right, #0066ff, #33ccff);
+  color: white;
+  padding: 40px 20px;
+  text-align: center;
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+
+
+/*  Class Selectors */
+
+/* Style for event cards */
+.eventCard {
+  background-color: #ffffff;
+  border: 2px solid #e0e0e0;
+  padding: 20px;
+  margin: 15px auto;
+  max-width: 600px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+
+/* Grouping Selectors */
+
+/* Style for h3 and paragraph elements */
+h3, p {
+  font-family: 'Helvetica Neue', sans-serif;
+  color: #333;
+  line-height: 1.6;
+  margin: 10px 0;
+}

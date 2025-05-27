@@ -1,0 +1,15 @@
+/* Header styles */
+.subheading {
+  color: navy;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+/* Paragraph styles */
+.main-text {
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  color: #333;
+}
+ 

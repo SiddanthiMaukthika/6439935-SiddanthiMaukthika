@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Portal Navigation</title>
+    <style>
+  form {
+    max-width: 400px;
+    background: #f9f9f9;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  }
+
+  input, select, textarea, button {
+    width: 100%;
+    padding: 8px;
+    margin-top: 4px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+  }
+
+  button {
+    background-color: #4CAF50;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+  button:hover {
+    background-color: #45a049;
+  }
+
+  output {
+    display: block;
+    margin-top: 15px;
+    font-weight: bold;
+    color: green;
+  }
+</style>
+
+</head>
+<body>
+    <main>
+        <!-- Event Registration Form -->
+<section id="register">
+    <h2 class="highlight">Register for an Event</h2>
+    <form id="eventForm" onsubmit="handleSubmit(event)">
+      <label for="name">Name:</label><br>
+      <input type="text" id="name" name="name" placeholder="Enter your name" required autofocus><br><br>
+  
+      <label for="email">Email:</label><br>
+      <input type="email" id="email" name="email" placeholder="Enter your email" required><br><br>
+  
+      <label for="eventDate">Date:</label><br>
+      <input type="date" id="eventDate" name="eventDate" required><br><br>
+  
+      <label for="eventType">Event Type:</label><br>
+      <select id="eventType" name="eventType" required>
+        <option value="">--Select an event--</option>
+        <option value="music">Music Night</option>
+        <option value="charity">Charity Walk</option>
+        <option value="tech">Tech Expo</option>
+        <option value="food">Food Festival</option>
+      </select><br><br>
+  
+      <label for="message">Message:</label><br>
+      <textarea id="message" name="message" placeholder="Any message for us?" rows="4" cols="30"></textarea><br><br>
+  
+      <button type="submit">Submit</button>
+    </form>
+  
+    <output id="confirmationMessage"></output>
+  </section>  
+    </main>
+
+</body>
+<script>
+    function handleSubmit(event) {
+      event.preventDefault(); // Prevent page reload
+      const name = document.getElementById("name").value;
+      const confirmation = document.getElementById("confirmationMessage");
+      confirmation.textContent = `🎉 Thanks, ${name}! You've successfully registered.`;
+    }
+  </script>
+  
+</html>

@@ -1,0 +1,18 @@
+/* Newspaper Column Layout */
+
+body {
+  font-family: 'Georgia', serif;
+  padding: 30px;
+  background-color: #fdfdfd;
+  color: #333;
+}
+
+/* Multi-column news article */
+.news-article {
+  column-count: 2;
+  column-gap: 30px;
+  column-rule: 1px solid gray;
+  font-size: 1rem;
+  line-height: 1.6;
+  text-align: justify;
+}

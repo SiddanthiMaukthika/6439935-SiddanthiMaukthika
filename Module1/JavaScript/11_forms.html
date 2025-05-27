@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Portal Base Template</title>
+</head>
+<body>
+<form id="registration-form" novalidate>
+  <label>
+    Name:
+    <input type="text" name="name" required />
+    <span class="error" style="color:red; font-size:0.9em;"></span>
+  </label><br/><br/>
+  
+  <label>
+    Email:
+    <input type="email" name="email" required />
+    <span class="error" style="color:red; font-size:0.9em;"></span>
+  </label><br/><br/>
+  
+  <label>
+    Select Event:
+    <select name="event" required>
+      <option value="">--Choose an event--</option>
+      <option value="Coding Workshop">Coding Workshop</option>
+      <option value="Jazz Night">Jazz Night</option>
+      <option value="Baking Class">Baking Class</option>
+    </select>
+    <span class="error" style="color:red; font-size:0.9em;"></span>
+  </label><br/><br/>
+  
+  <button type="submit">Register</button>
+</form>
+
+<div id="success-message" style="color:green; margin-top:15px;"></div>
+
+</body>
+<script>
+    const form = document.getElementById('registration-form');
+const successMessage = document.getElementById('success-message');
+
+form.addEventListener('submit', function(event) {
+  event.preventDefault(); // no page reload
+
+  successMessage.textContent = ''; // reset previous success message
+
+  const { name, email, event: selectedEvent } = form.elements;
+  let valid = true;
+
+  // Helper to show or clear errors
+  const setError = (input, message) => {
+    const errorSpan = input.nextElementSibling;
+    if (message) {
+      errorSpan.textContent = message;
+      valid = false;
+    } else {
+      errorSpan.textContent = '';
+    }
+  };
+
+  // Validate name (non-empty)
+  setError(name, name.value.trim() === '' ? 'Name is required' : '');
+
+  // Validate email (simple regex)
+  const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  setError(email, !emailPattern.test(email.value) ? 'Valid email required' : '');
+
+  // Validate event selection
+  setError(selectedEvent, selectedEvent.value === '' ? 'Please select an event' : '');
+
+  if (!valid) return; // stop if validation failed
+
+  // If all good, simulate form processing
+  successMessage.textContent = `Thanks for registering, ${name.value.trim()}! You signed up for ${selectedEvent.value}.`;
+
+  // Optionally reset form after submission
+  form.reset();
+});
+
+</script>

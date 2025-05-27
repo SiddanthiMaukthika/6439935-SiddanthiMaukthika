@@ -1,0 +1,32 @@
+/* Table Styling for Events Admin */
+
+table {
+  width: 100%;
+  border-collapse: collapse; /* Collapse double borders into one */
+  margin: 20px 0;
+  font-family: 'Roboto', sans-serif;
+  text-align: center;
+}
+
+th, td {
+  border: 1px solid #ccc;
+  padding: 12px 15px;
+}
+
+/* Header styling */
+th {
+  background-color: #0077cc;
+  color: white;
+  font-weight: 700;
+}
+
+/* Zebra striping for rows */
+tbody tr:nth-child(even) {
+  background-color: #f2f6fb;
+}
+
+/* Hover effect on rows */
+tbody tr:hover {
+  background-color: #d0e4fb;
+  cursor: pointer;
+}
